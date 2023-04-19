@@ -27,8 +27,8 @@ const Navbar = () => {
 
         {showMediaIcons && (
           <motion.div
-            whileInView={{ x: [300, 0] }}
-            transition={{ duration: 0.85, ease: 'easeOut' }}
+            whileInView={{ x: [200, 0] }}
+            transition={{ duration: 0.5, ease: 'circInOut' }}
           >
             <HiX onClick={() => setShowMediaIcons(!showMediaIcons)} />
             <ul>
