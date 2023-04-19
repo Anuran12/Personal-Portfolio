@@ -6,7 +6,7 @@ import { images } from '../../constants';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
+  const [showMediaIcons, setShowMediaIcons] = useState(false);
 
   return (
     <nav className="app__navbar">
@@ -23,18 +23,18 @@ const Navbar = () => {
       </ul>
 
       <div className="app__navbar-menu">
-        <HiMenuAlt4 onClick={() => setToggle(true)} />
+        <HiMenuAlt4 onClick={() => setShowMediaIcons(!showMediaIcons)} />
 
-        {toggle && (
+        {showMediaIcons && (
           <motion.div
             whileInView={{ x: [300, 0] }}
             transition={{ duration: 0.85, ease: 'easeOut' }}
           >
-            <HiX onClick={() => setToggle(false)} />
+            <HiX onClick={() => setShowMediaIcons(!showMediaIcons)} />
             <ul>
               {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
+                  <a href={`#${item}`} onClick={() => setShowMediaIcons(!showMediaIcons)}>
                     {item}
                   </a>
                 </li>
